@@ -17,9 +17,12 @@ int main(void)
 		{
 			putchar(ch);
 			putchar(cz);
-			putchar(',');
-			putchar(' ');
-			cz++;
+			if (cz + ch < 57 * 2)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+		cz++;
 		}
 		cz = '0';
 		ch++;
