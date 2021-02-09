@@ -32,5 +32,4 @@ void print_alphabet_x10(void)
 		print("abcdefghijklmnopqrstuvwxyz\n");
 		count++;
 	}
-	print("\n");
 }
