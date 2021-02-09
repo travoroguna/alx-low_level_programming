@@ -2,14 +2,14 @@
 #include "holberton.h"
 
 /**
-* convert_day - converts day of month to day of year, without accounting
+* conv_day - converts day of month to day of year, without accounting
 * for leap year
 * @month: month in number format
 * @day: day of month
 * Return: day of year
 */
 
-int convert_day(int month, int day)
+int conv_day(int month, int day)
 {
 	switch (month)
 	{
@@ -63,7 +63,7 @@ int convert_day(int month, int day)
 
 void print_remaining_days(int month, int day, int year)
 {
-	day = convert_day(month, day);
+	day = conv_day(month, day);
 
 	if ((year % 4 == 0 || year % 400 == 0) && !(year % 100 == 0))
 	{
