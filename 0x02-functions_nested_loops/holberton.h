@@ -4,6 +4,12 @@
 
 int _putchar(char c);
 
+/**
+ * print - prints a char*
+ *
+ * @string: constant string pointer
+ */
+
 void print(const char *string)
 {
 	int idx = 0;
@@ -16,5 +22,6 @@ void print(const char *string)
 }
 
 void print_alphabet(void);
+void print_alphabet_x10(void);
 
 #endif
