@@ -23,9 +23,11 @@ void print_number(int number)
 
 void jack_bauer(void)
 {
-	for (int x = 0; x < 24; x++)
+	int x, y;
+
+	for (x = 0; x < 24; x++)
 	{
-		for (int y = 0; y < 60; y++)
+		for (y = 0; y < 60; y++)
 		{
 			print_number(x);
 			_putchar(':');
