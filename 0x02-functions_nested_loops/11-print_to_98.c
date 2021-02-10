@@ -28,7 +28,7 @@ void print_to_98(int n)
 
 	else
 	{
-		return (98);
+		return (n);
 	}
 }
 
