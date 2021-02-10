@@ -19,11 +19,12 @@ void times_table(void)
 			number = x * y;
 			f_digit = number % 10;
 			s_digit = number / 10;
+
 			if (s_digit <= 0)
 			{
 				_putchar(' ');
 			}
-			else
+			else if (x != 0)
 			{
 				_putchar('0' + s_digit);
 			}
