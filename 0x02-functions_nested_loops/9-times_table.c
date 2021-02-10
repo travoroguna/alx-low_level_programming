@@ -10,10 +10,11 @@ void times_table(void)
 	int number = 0;
 	int f_digit = 0;
 	int s_digit = 0;
+	int x, y;
 
-	for (int x = 0; x < 10; x++)
+	for (x = 0; x < 10; x++)
 	{
-		for (int y = 0; y < 10; y++)
+		for (y = 0; y < 10; y++)
 		{
 			number = x * y;
 			f_digit = number % 10;
