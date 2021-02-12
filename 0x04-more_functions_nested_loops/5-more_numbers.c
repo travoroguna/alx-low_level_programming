@@ -12,12 +12,12 @@ void pch(int character)
 }
 
 /**
- * print_number - function that prints number using _putchar
+ * _print_number - function that prints number using _putchar
  *
  * @number: number to be printed
  */
 
-void print_number(int number)
+void _print_number(int number)
 {
 	int f_digit = number % 10;
 	int s_digit = number / 10;
@@ -43,7 +43,7 @@ void more_numbers(void)
 	while (count < 10)
 	{
 		for (x = 0; x < 15; x++)
-			print_number(x);
+			_print_number(x);
 
 		_putchar('\n');
 		count++;
