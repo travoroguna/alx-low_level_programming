@@ -12,31 +12,22 @@ void pch(int character)
 }
 
 /**
- * print_number - prints number
+ * print_number - function that prints number using _putchar
+ *
  * @number: number to be printed
  */
 
-void print_number(long number)
+void print_number(int number)
 {
-	if (number < 0)
-	{
-		pch('-');
-		number = number * -1;
-	}
-		print_number(number / 10);
+	int f_digit = number % 10;
+	int s_digit = number / 10;
 
-	if (number == 0)
+	if (s_digit > 0)
 	{
-		pch('0');
+		pch('0' + s_digit);
 	}
 
-	if (number / 10)
-	{
-		print_number(number / 10);
-	}
-
-	pch(number % 10 + '0');
-
+	pch('0' + f_digit);
 }
 
 /**
@@ -60,4 +51,3 @@ void more_numbers(void)
 
 	_putchar('\n');
 }
-
