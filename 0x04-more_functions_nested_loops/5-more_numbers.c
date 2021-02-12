@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
- * my_putchar - you are not the boss of me.
+ * pch - you are not the boss of me.
  *
  * @character: character to be printed
  */
 
-void my_putchar(int character)
+void pch(int character)
 {
 	_putchar(character);
 }
@@ -20,14 +20,14 @@ void print_number(long number)
 {
 	if (number < 0)
 	{
-		my_putchar('-');
+		pch('-');
 		number = number * -1;
 	}
 		print_number(number / 10);
 
 	if (number == 0)
 	{
-		my_putchar('0');
+		pch('0');
 	}
 
 	if (number / 10)
@@ -35,7 +35,7 @@ void print_number(long number)
 		print_number(number / 10);
 	}
 
-	my_putchar(number % 10 + '0');
+	pch(number % 10 + '0');
 
 }
 
