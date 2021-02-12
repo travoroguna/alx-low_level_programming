@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "holberton.h"
 
+int conv_day(int month, int day);
+
 /**
 * conv_day - converts day of month to day of year, without accounting
 * for leap year
