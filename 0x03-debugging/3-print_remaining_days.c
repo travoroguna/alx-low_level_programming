@@ -91,3 +91,8 @@ void print_remaining_days(int month, int day, int year)
 		}
 	}
 }
+
+int main()
+{
+	print_remaining_days(4, 1, 1997);
+}
