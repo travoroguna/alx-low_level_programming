@@ -15,7 +15,7 @@ void print_rev(char *s)
 	{
 	}
 
-	for (idx = length - 1; idx > 0; idx--)
+	for (idx = length - 1; idx >= 0; idx--)
 	{
 		_putchar(*(s + idx));
 	}
@@ -23,3 +23,4 @@ void print_rev(char *s)
 	_putchar('\n');
 
 }
+

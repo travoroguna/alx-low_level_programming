@@ -7,10 +7,16 @@
 
 void rev_string(char *s)
 {
+
+	char *tail;
+	char h;
+	char t;
+
+
 	if (!s)
 		return;
 
-	char *tail = s;
+	*tail = s;
 
 	while (*tail)
 		++tail;
@@ -18,7 +24,8 @@ void rev_string(char *s)
 
 	for ( ; s < tail; ++s, --tail)
 	{
-		char h = *s, t = *tail;
+		h = *s
+		t = *tail;
 		*s = t;
 		*tail = h;
 	}
