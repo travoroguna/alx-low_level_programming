@@ -27,7 +27,7 @@ void cap(char *c)
 
 char *cap_string(char *str)
 {
-	char *separators = " \t\n,;.!?(){}";
+	char *separators = " \t\n,;.!?\"(){}";
 	int capitalise = False;
 	int idx, idy;
 
