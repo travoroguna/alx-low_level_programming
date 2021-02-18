@@ -15,7 +15,10 @@ char *string_toupper(char *str)
 
 	while (*str)
 	{
-		*str = (*str >= 'a' && *str <= 'z') ? *str -= OFFSET : *str;
+		if (*str >= 'a' && *str <= 'z')
+		{
+			*str -= OFFSET;
+		}
 		str++;
 	}
 
