@@ -24,6 +24,8 @@ int _strlen(char *str)
  * @dest: destination of the string
  * @src: string source
  * @n: maximum string length
+ *
+ * Return: pointer to the destination
  */
 
 char *_strncat(char *dest, char *src, int n)
@@ -32,7 +34,7 @@ char *_strncat(char *dest, char *src, int n)
 	int i;
 
 	for (i = 0; i < n && src[i] != '\0'; i++)
-		dest[dest_len + 1] = src[i];
+		dest[dest_len + i] = src[i];
 	dest[dest_len + i] = '\0';
 
 	return (dest);
