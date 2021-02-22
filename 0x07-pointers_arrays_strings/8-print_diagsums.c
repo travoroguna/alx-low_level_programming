@@ -8,12 +8,12 @@
  */
 
 void print_diagsums(int *a, int size)
-{	
+{
 	int idx;
 	int diag_0 = 0;
 	int diag_1 = 0;
 	int count_0 = 0;
-	int count_1 = size-1;
+	int count_1 = size - 1;
 
 	for (idx = 0; idx < size; idx++, count_0++, count_1--)
 	{

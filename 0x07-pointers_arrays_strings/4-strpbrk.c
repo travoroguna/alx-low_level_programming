@@ -13,7 +13,7 @@ char *_strchr(char *s, char c)
 
 	for (idx = 0; *(s + idx) != '\0'; idx++)
 		if (*(s + idx) == c)
-			return &s[idx];
+			return (&s[idx]);
 	return (NULL);
 }
 
@@ -26,7 +26,7 @@ char *_strchr(char *s, char c)
  */
 char *_strpbrk(char *s, char *accept)
 {
-	if((s == NULL) || (accept == NULL))
+	if ((s == NULL) || (accept == NULL))
 		return (NULL);
 
 	while (*s)
@@ -41,5 +41,5 @@ char *_strpbrk(char *s, char *accept)
 		}
 	}
 	return (NULL);
-	
+
 }

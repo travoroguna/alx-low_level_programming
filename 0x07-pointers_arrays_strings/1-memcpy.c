@@ -1,6 +1,5 @@
 #include "holberton.h"
 
-
 /**
  * _memcpy - copies n bytes from the source to the destination
  *
@@ -13,11 +12,11 @@
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int idx;
+	unsigned int idx;
 
 	for (idx = 0; idx < n; idx++)
 		*(dest + idx) = *(src + idx);
-	
+
 	return (dest);
-	
+
 }
