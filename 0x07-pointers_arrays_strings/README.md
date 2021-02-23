@@ -16,3 +16,5 @@
 diagonals of a square matrix of integers.
 
 9-set\_string.c: function that sets the value of a pointer to a char.
+
+101-crackme_password: crackme2 executable password
