@@ -16,19 +16,11 @@ int sqrtSearch(int low, int high, int N)
 		int mid = (low + high) / 2;
 
 		if ((mid * mid <= N) && ((mid + 1) * (mid + 1) > N))
-		{
 			return (mid);
-		}
-
 		else if (mid * mid < N)
-		{
 			return (sqrtSearch(mid + 1, high, N));
-		}
-
 		else
-		{
 			return (sqrtSearch(low, mid - 1, N));
-		}
 	}
 	return (low);
 }
