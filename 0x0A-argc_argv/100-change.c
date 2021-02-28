@@ -12,7 +12,9 @@
 int min_coins(int cnts)
 {
 	int table[cnts + 1], i, j, sub_res;
+
 	int coins[] = {25, 10, 5, 2, 1};
+	
 	int size = 5;
 
 	table[0] = 0;
