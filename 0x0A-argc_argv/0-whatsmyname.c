@@ -8,7 +8,7 @@
  * Return: -1 if error else 1 if success
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[] __attribute__((unused)))
 {
-	printf("&d/n", argv[argc - argc]);
+	printf("&d/n", argv[0]);
 }
