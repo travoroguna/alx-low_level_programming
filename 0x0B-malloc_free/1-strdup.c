@@ -43,7 +43,7 @@ char *_strdup(char *str)
 	for (idx = 0; idx < str_len; idx++)
 		new_string[idx] = str[idx];
 
-	new_string[idx] = 0;
+	new_string[idx] = '\0';
 
 	return (new_string);
 }
