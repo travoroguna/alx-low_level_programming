@@ -49,7 +49,7 @@ char *argstostr(int ac, char **av)
 	length = 0;
 	count = 0;
 
-	for (idx = 1; idx < ac; idx++)
+	for (idx = 0; idx < ac; idx++)
 	{
 		temp_str = av[idx];
 		length = _strlen(temp_str);
