@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _strlen - returns the length of a string
@@ -46,6 +47,7 @@ char *str_concat(char *s1, char *s2)
 
 	newstr[s1_len + s2_len] = 0;
 
+	free(s1);
 	return (newstr);
 }
 
@@ -59,8 +61,10 @@ char *str_concat(char *s1, char *s2)
 
 char *argstostr(int ac, char **av)
 {
-	char *new_str = "";
+	char *new_str = malloc(1);
 	int idx;
+
+	new_str[0] = '\0';
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
