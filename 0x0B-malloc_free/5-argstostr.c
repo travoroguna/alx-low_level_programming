@@ -19,6 +19,36 @@ int _strlen(char *s)
 	return (idx);
 }
 
+
+/**
+ * str_concat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ *
+ * Return: pointer to the start of the concatnated string
+ */
+
+char *str_concat(char *s1, char *s2)
+{
+	int s1_len = _strlen(s1);
+	int s2_len = _strlen(s2);
+	char *newstr = malloc((sizeof(char) * (s1_len  + s2_len)) + 1);
+	int idx;
+
+	if (newstr == NULL)
+		return (NULL);
+
+	for (idx = 0; idx < s1_len; idx++)
+		newstr[idx] = s1[idx];
+
+	for (idx = 0; idx < s2_len; idx++)
+		newstr[idx + s1_len] = s2[idx];
+
+	newstr[s1_len + s2_len] = 0;
+
+	return (newstr);
+}
+
 /**
  * argstostr - concatenates all the arguments of your program.
  * @ac: number of args
@@ -29,40 +59,17 @@ int _strlen(char *s)
 
 char *argstostr(int ac, char **av)
 {
-	char *new_str;
-	char *temp_str;
-	int idx, idy, length, count;
+	char *new_str = "";
+	int idx;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	length = 0;
-
-	for (idx = 0; idx < ac; idx++)
-		length += _strlen(av[idx]);
-
-	new_str = malloc(1 + (sizeof(char) * length));
-
-	if (new_str == NULL)
-		return (NULL);
-
-	length = 0;
-	count = 0;
-
 	for (idx = 0; idx < ac; idx++)
 	{
-		temp_str = av[idx];
-		length = _strlen(temp_str);
-
-		for (idy = 0; idy < length; idy++)
-		{
-			new_str[count] = temp_str[idy];
-			count++;
-		}
-		new_str[count] = '\n';
-		count++;
+		new_str = str_concat(new_str, av[idx]);
+		new_str = str_concat(new_str, "\n");
 	}
 
-	new_str[count] = '\0';
 	return (new_str);
 }
