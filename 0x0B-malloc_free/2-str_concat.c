@@ -35,10 +35,10 @@ char *str_concat(char *s1, char *s2)
 {
 	int s1_len = _strlen(s1);
 	int s2_len = _strlen(s2);
-	char *newstr = malloc((sizeof(char) * (s1_len  + s2_len)) - 1);
+	char *newstr = malloc((sizeof(char) * (s1_len  + s2_len)) + 1);
 	int idx;
 
-	if(newstr == NULL)
+	if (newstr == NULL)
 		return (NULL);
 
 	for (idx = 0; idx < s1_len; idx++)
