@@ -1,6 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 
+
 /**
  * _strlen - returns the length of a string
  * @s: pointer to the string
@@ -44,7 +45,7 @@ char *str_concat(char *s1, char *s2)
 		newstr[idx] = s1[idx];
 
 	for (idx = 0; idx < s2_len; idx++)
-		newstr[idx + s1_len - 1] = s2[idx];
+		newstr[idx + s1_len] = s2[idx];
 
 	newstr[s1_len + s2_len] = 0;
 
