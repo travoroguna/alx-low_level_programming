@@ -38,7 +38,7 @@ char *argstostr(int ac, char **av)
 
 	length = 0;
 
-	for (idx = 1; idx < ac; idx++)
+	for (idx = 0; idx < ac; idx++)
 		length += _strlen(av[idx]);
 
 	new_str = malloc(1 + (sizeof(char) * length));
