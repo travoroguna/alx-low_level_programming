@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
+
 /**
  * min_coins - calculate number of coins to make change for an amount of money.
  * @cnts: money
@@ -11,10 +12,9 @@
 
 int min_coins(int cnts)
 {
-	int table[cnts + 1], i, j, sub_res;
-
+	int table[] = malloc(sizeof(int) * (cnts+1));
+	int i, j, sub_res, result;
 	int coins[] = {25, 10, 5, 2, 1};
-
 	int size = 5;
 
 	table[0] = 0;
@@ -37,7 +37,9 @@ int min_coins(int cnts)
 	if (table[cnts] == INT_MAX)
 		return (-1);
 
-	return (table[cnts]);
+	result = table[cnts];
+	free(table);
+	return (result);
 }
 /**
  * main - Proram entry point
