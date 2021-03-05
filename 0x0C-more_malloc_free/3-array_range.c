@@ -16,13 +16,13 @@ int *array_range(int min, int max)
 	if (min > max)
 		return (NULL);
 
-	arr = malloc(sizeof(int) * (max - min + 1));
+	arr = malloc(sizeof(int) * ((max - min) + 1));
 
 	if (arr == NULL)
 		return (NULL);
 
-	for (idx = min; idx <= max; idx++)
-		arr[idx] = idx;
+	for (idx = 0; idx < ((max - min) + 1); idx++)
+		arr[idx] = min + idx;
 
 	return (arr);
 }
