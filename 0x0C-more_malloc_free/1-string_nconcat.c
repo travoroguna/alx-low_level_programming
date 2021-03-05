@@ -47,8 +47,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		*new_str++ = *s1++;
 
 	if (s2 != NULL)
+	{
+		*new_str--;
 		for (idx = 0; idx < n  && *(s2 + idx) != '\0'; idx++)
 			*new_str++ = *(s2 + idx);
+	}
 
 	*(new_str) = '\0';
 
