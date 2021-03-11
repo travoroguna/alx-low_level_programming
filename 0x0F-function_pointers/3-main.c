@@ -37,14 +37,10 @@ int main(int argc, char **argv)
 
 	func_ptr = get_op_func(argv[2]);
 
-	if (sign == '/' || sign == '%')
+	if ((sign == '/' || sign == '%') && (b == 0))
 	{
-		if (b == 0)
-		{
-			printf("Error\n");
-			return (100);
-		}
-
+		printf("Error\n");
+		return (100);
 	}
 
 	printf("%d\n", (*func_ptr)(a, b));
