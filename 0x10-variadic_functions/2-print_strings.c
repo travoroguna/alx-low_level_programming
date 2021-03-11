@@ -20,7 +20,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	for (idx = 0; idx < (int)n; idx++)
 	{
-		str = va_arg(arg_ptr, char *)
+		str = va_arg(arg_ptr, char *);
 
 		if (idx != (int)n - 1)
 		{
@@ -31,8 +31,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		else
 		{
-			printf("%d", va_arg(arg_ptr, char *));
+			printf("%s", str);
 		}
 	}
+	va_end(arg_ptr);
 	printf("\n");
 }
