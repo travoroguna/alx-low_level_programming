@@ -2,41 +2,6 @@
 #include <stdlib.h>
 
 /**
- * _strdup- prints an integer
- * @s: variable to be printed
- * Return: length of printed characters
- */
-
-char *_strdup(const char *s)
-{
-	size_t size = strlen(s) + 1;
-	char *p = malloc(size);
-
-	if (p)
-		memcpy(p, s, size);
-	return (p);
-}
-
-/**
- * _strlen - length of stringg
- * @str: string to get length
- * Return: length of str
- */
-
-size_t _strlen(const char *str)
-{
-	int count = 0;
-
-	while (*str)
-	{
-		count++;
-		str++;
-	}
-
-	return (count);
-}
-
-/**
 * add_node_end - function that adds a new node at the end of a list_t list.
 * @head: first node
 * @str: str content
