@@ -3,14 +3,21 @@
 #include <string.h>
 #include <stdlib.h>
 
+
+/**
+ * strdup- prints an integer
+ * @s: variable to be printed
+ * Return: length of printed characters
+ */
+
 char *strdup(const char *s)
 {
-    size_t size = strlen(s) + 1;
-    char *p = malloc(size);
-    if (p)
-        memcpy(p, s, size);
+	size_t size = strlen(s) + 1;
+	char *p = malloc(size);
 
-    return p;
+	if (p)
+		memcpy(p, s, size);
+	return (p);
 }
 
 /**
