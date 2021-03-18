@@ -26,6 +26,6 @@ list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
 int _putchar(char c);
 void print_str(char *str, size_t len);
-int print_int(long int var);
+size_t _strlen(const char *str);
 
 #endif

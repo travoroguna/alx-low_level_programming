@@ -41,9 +41,7 @@ size_t print_list(const list_t *h)
 
 		print_str(next->str, next->len);
 		next = next->next;
-
 		++count;
-
 	}
 
 	return (count);

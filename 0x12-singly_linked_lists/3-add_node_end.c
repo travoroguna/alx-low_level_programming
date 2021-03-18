@@ -1,6 +1,21 @@
 #include "lists.h"
-#include <string.h>
 #include <stdlib.h>
+
+/**
+ * _strdup- prints an integer
+ * @s: variable to be printed
+ * Return: length of printed characters
+ */
+
+char *_strdup(const char *s)
+{
+	size_t size = strlen(s) + 1;
+	char *p = malloc(size);
+
+	if (p)
+		memcpy(p, s, size);
+	return (p);
+}
 
 /**
  * _strlen - length of stringg
@@ -33,7 +48,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *new_node = malloc(sizeof(list_t));
 	list_t *current_node = *head;
 
-	new_node->str = strdup(str);
+	new_node->str = _strdup(str);
 	new_node->len = _strlen(str);
 	new_node->next = NULL;
 
