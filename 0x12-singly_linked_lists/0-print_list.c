@@ -10,7 +10,7 @@
 
 int print_int(long int var)
 {
-	int count = 0;
+	long int count = 0;
 
 	if (var < 0)
 	{
