@@ -4,8 +4,9 @@
 
 
 /**
-* add_nodeint - function that adds a new node at the beginning of a listint_t list.
-* @*head: head of node
+* add_nodeint - function that adds a new
+* node at the beginning of a listint_t list.
+* @head: head of node
 * @n: data for the node
 * Return: new adress of the node
 */
