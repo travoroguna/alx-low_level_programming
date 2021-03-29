@@ -45,7 +45,7 @@ void write_buffer(Buffer *buffer, char *character, size_t size)
 
 	for (count = 0; count < size; count++)
 	{
-		if (buffer->size >= BUFFER_SIZE)
+		if (buffer->size >= 1024)
 			flush_buffer(buffer);
 
 		buffer->buff[buffer->size] = *(character + count);
