@@ -8,7 +8,7 @@
 typedef struct Buffer
 {
 	size_t size;
-	char buff[BUFFER_SIZE];
+	char buff[1024];
 	int f_out;
 } Buffer;
 
@@ -104,7 +104,7 @@ int main(int ac, char **av)
 {
 	Buffer buffer;
 	int fd_in, fd_out, fd_in_res;
-	char inpt[BUFFER_SIZE];
+	char inpt[1024];
 
 	if (ac != 3)
 	{
