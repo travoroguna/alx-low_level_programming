@@ -123,7 +123,7 @@ int main(int ac, char **av)
 
 	while (1)
 	{
-		fd_in_res = read(fd_in, inpt, BUFFER_SIZE);
+		fd_in_res = read(fd_in, inpt, 1024);
 
 		if (fd_in_res > 0)
 			write_buffer(&buffer, inpt, fd_in_res);
