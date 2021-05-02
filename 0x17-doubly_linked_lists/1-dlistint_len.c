@@ -1,10 +1,10 @@
-#include "lists.h>"
+#include "lists.h"
 #include <stdlib.h>
 
 /**
  * add_dnodeint - add a new node at the beginning of the list
  * @head: double pointer to the beginning of the list
- * @n: value to add to the new node 
+ * @n: value to add to the new node
  * Return: pointer to the new node, or NULL on failure
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
