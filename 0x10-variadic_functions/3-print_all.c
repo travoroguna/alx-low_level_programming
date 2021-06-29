@@ -1,51 +1,98 @@
-#include "variadic_functions.h"
 #include <stdarg.h>
+#include "variadic_functions.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
-* print_all - function that prints anything.
-* @format: string format
-* @...: variables to print
-*/
+ * prt_char - prints a character pointed to by a va_list
+ * @ch: the character to be printed
+ * Return: No Value
+ */
+
+void prt_char(va_list ch)
+{
+	printf("%c", va_arg(ch, int));
+}
+
+/**
+ * prt_int - prints an integer pointed to by a va_list
+ * @in: the integer to be printed
+ * Return: No Value
+ */
+
+void prt_int(va_list in)
+{
+	printf("%d", va_arg(in, int));
+}
+
+/**
+ * prt_float - prints a float pointed to by a va_list
+ * @fl: the float to be printed
+ * Return: No Value
+ */
+
+void prt_float(va_list fl)
+{
+	printf("%f", va_arg(fl, double));
+}
+
+/**
+ * prt_str - prints a string pointed to by a va_list
+ * @st: the string to be printed
+ * Return: No Value
+ */
+
+void prt_str(va_list st)
+{
+	char *sub;
+
+	sub = va_arg(st, char *);
+	switch (!sub)
+	{
+	case 1:
+		printf("(nil)");
+		break;
+	default:
+		printf("%s", sub);
+		break;
+	}
+}
+
+/**
+ * print_all - prints anything
+ * @format: a pointer to a list of types being fed into the function
+ * Return: No Value
+ */
 
 void print_all(const char * const format, ...)
 {
-	int found = 1;
-	char current;
-	char *s_char;
-	va_list c_ptr;
-	int idx = 0;
+	int i = 0, j = 0;
+	va_list elemtopr;
+	var varray[] = {
+		{"c", prt_char},
+		{"i", prt_int},
+		{"f", prt_float},
+		{"s", prt_str},
+		{NULL, NULL}
+	};
 
-	va_start(c_ptr, format);
-	while (*(format + idx) != '\0')
+	va_start(elemtopr, format);
+	while (format != NULL && format[i])
 	{
-		current = *(format + idx);
-		found = 1;
-		switch (current)
+		j = 0;
+		while (varray[j].c)
 		{
-			case 'c':
-				printf("%c", va_arg(c_ptr, int));
+			if (format[i] == *(varray[j].c))
+			{
+				varray[j].prf(elemtopr);
 				break;
-			case 'i':
-				printf("%d", va_arg(c_ptr, int));
-				break;
-			case 'f':
-				printf("%f", va_arg(c_ptr, double));
-				break;
-			case 's':
-				s_char = va_arg(c_ptr, char *);
-				if (s_char == NULL)
-					printf("%s", "(nil)");
-				else
-					printf("%s", s_char);
-				break;
-			default:
-				found = 0;
-				break;
+			}
+			j++;
 		}
-		if (found && *(format + idx + 1) != '\0')
+		if ((format[i + 1]) != '\0' && varray[j].c != NULL)
 			printf(", ");
-		idx++;
+		i++;
 	}
+	va_end(elemtopr);
 	printf("\n");
 }
