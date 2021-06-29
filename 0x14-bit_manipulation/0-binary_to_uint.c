@@ -1,45 +1,63 @@
-#include "holberton.h"
 #include <stdio.h>
 
-
-unsigned int binary_to_uint(const char *b)
+/**
+ * _strlen - length of string
+ * void: nothing
+ * @s: char pointer
+ * Return: void
+ **/
+unsigned int _strlen(const char *s)
 {
-	unsigned int result = 0;
-	unsigned int idx = 0;
+	int c;
 
-	if (b == NULL)
-		return (0);
+	for (c = 0; s[c] != '\0'; c++)
+		;
+	return (c);
+}
 
-	while (*(b + idx) != '\0')
-	{
-		if (!(*(b + idx) == '1' || *(b + idx) == '0'))
-			return (0);
+/**
+ * _power - get power
+ * void: nothing
+ * @base: base
+ * @exponent: exponent
+ * Return: result of operation
+ **/
+int _power(int base, int exponent)
+{
+	int result = 1;
 
-		result <<= 1;
-
-		if (*(b + idx) == '1')
-			result += 1;
-		idx++;
-			
-	}
+	for (; exponent > 0; exponent--)
+		result = result * base;
 
 	return (result);
 }
 
-
-int main()
+/**
+ * binary_to_uint - binary to uint conversion
+ * @b: binary number in char pointer
+ * Return: unsigned integer
+ **/
+unsigned int binary_to_uint(const char *b)
 {
-unsigned int n;
+	int len, c, pw, num = 0;
+	unsigned int n;
 
-    n = binary_to_uint("1");
-    printf("%u\n", n);
-    n = binary_to_uint("101");
-    printf("%u\n", n);
-    n = binary_to_uint("1e01");
-    printf("%u\n", n);
-    n = binary_to_uint("1100010");
-    printf("%u\n", n);
-    n = binary_to_uint("0000000000000000000110010010");
-    printf("%u\n", n);
-    return (0);
+	if (b == NULL)
+		return (0);
+
+	len =  _strlen(b);
+
+	for (c = 0; b[c] != '\0'; c++, len--)
+	{
+		n = b[c] - '0';
+
+		if ((n == 0) || (n == 1))
+		{
+			pw = _power(2, (len - 1));
+			num = num + (n * pw);
+		}
+		else
+			return (0);
+	}
+	return (num);
 }
