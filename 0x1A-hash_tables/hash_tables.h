@@ -90,5 +90,6 @@ void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 int insert_singly(shash_table_t *ht, const char *key, const char *value);
 void insert_doubly(shash_table_t *ht, shash_node_t *new);
+void insert(shash_table_t *ht, shash_node_t *element);
 
 #endif
