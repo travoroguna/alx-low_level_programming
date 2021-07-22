@@ -14,5 +14,6 @@ int is_prime(int n, int i);
 int _strlen(char *str);
 int is_pal(int start, int end, char *str);
 int sqrtSearch(int low, int high, int N);
+int wildcmp(char *s1, char *s2);
 
 #endif
