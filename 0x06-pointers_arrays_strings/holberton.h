@@ -13,6 +13,8 @@ char *rot13(char *);
 void swap_int(int *num_0, int *num_1);
 int _strlen(char *str);
 void cap(char *c);
+char *rot13(char *s);
+void print_number(int n);
 
 #endif
 
